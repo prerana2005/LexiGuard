@@ -3,6 +3,23 @@
 An intelligent legal AI system for understanding, analyzing, 
 and explaining legal clauses with Indian law context.
 
+## 📦 Datasets & Embeddings
+
+All datasets and embeddings are stored on HuggingFace.
+
+### Download (run once):
+pip install huggingface_hub
+
+python -c "
+from huggingface_hub import snapshot_download
+snapshot_download(
+    repo_id='caraxes22/LexiGuard-datasets',
+    repo_type='dataset',
+    local_dir='.'
+)
+print('All files downloaded!')
+"
+
 ## Project Structure
 ```
 LexiGuard/
