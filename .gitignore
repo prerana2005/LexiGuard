@@ -1,0 +1,46 @@
+notepad .gitignore
+```
+
+Paste this:
+```
+# Virtual environment
+lexiguard/
+
+# Large data files
+data/raw/
+data/processed/*.json
+data/processed/*.csv
+*.npy
+*.index
+*.parquet
+
+# Model files
+models/
+*.bin
+*.safetensors
+*.pt
+*.pth
+
+# HuggingFace cache
+.cache/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large zip files
+*.zip
+*.tar.gz
