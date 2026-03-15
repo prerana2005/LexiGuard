@@ -3,6 +3,23 @@
 An intelligent legal AI system for understanding, analyzing, 
 and explaining legal clauses with Indian law context.
 
+## 📦 Datasets & Embeddings
+
+All datasets and embeddings are stored on HuggingFace.
+
+### Download (run once):
+pip install huggingface_hub
+
+python -c "
+from huggingface_hub import snapshot_download
+snapshot_download(
+    repo_id='caraxes22/LexiGuard-datasets',
+    repo_type='dataset',
+    local_dir='.'
+)
+print('All files downloaded!')
+"
+
 ## Project Structure
 ```
 LexiGuard/
@@ -75,3 +92,43 @@ pip install scikit-learn pandas kaggle huggingface-hub
 
 ## Team
 - LexiGuard — Legal AI Project
+
+
+##  — RAG + Compliance Agent + Scoring + API 
+
+### Files
+- `rag_pipeline.py` — Loads FAISS index, searches relevant Indian law chunks for a given clause
+- `compliance_agent.py` — Compliance Agent that checks clause against Indian laws using Groq LLM
+- `scoring.py` — Risk scoring formula (0-100) based on all 4 agent results
+- `main.py` — FastAPI server exposing all agents as API endpoints
+
+### Setup
+```bash
+pip install faiss-cpu sentence-transformers groq fastapi uvicorn python-multipart python-dotenv
+```
+
+### Environment Variables
+Create a `.env` file in the root folder:
+```
+GROQ_API_KEY=your_groq_api_key_here
+```
+
+### Running the API
+```bash
+uvicorn main:app --reload
+```
+API will be available at `http://127.0.0.1:8000`
+Interactive docs at `http://127.0.0.1:8000/docs`
+
+### API Endpoints
+| Endpoint | Method | Description |
+|---|---|---|
+| `/` | GET | Health check |
+| `/analyze/compliance` | POST | Check clause against Indian laws |
+| `/analyze/full` | POST | Full analysis with scoring |
+
+### RAG Pipeline
+- Embedding model: `sentence-transformers/all-MiniLM-L6-v2`
+- Vector DB: FAISS (17,228 Indian law chunks)
+- Returns top 3 most relevant law chunks for any given clause
+- Filters out low quality QA entries automatically

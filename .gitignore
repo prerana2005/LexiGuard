@@ -44,3 +44,9 @@ Thumbs.db
 # Large zip files
 *.zip
 *.tar.gz
+
+lexiguard_env/
+.env
+download_faiss.py
+embeddings/
+faiss_index/
