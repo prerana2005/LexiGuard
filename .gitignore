@@ -1,8 +1,10 @@
-notepad .gitignore
-```
+# Ignore data files
 
-Paste this:
-```
+data/processed/*.json
+data/raw/*.json
+embeddings/
+faiss_index/
+models/
 # Virtual environment
 lexiguard/
 
