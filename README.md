@@ -186,7 +186,7 @@ pip install scikit-learn pandas huggingface-hub
 ## 👥 Team
 LexiGuard — Legal AI Project
 
-**Person 1 (Vineet)** — Data Pipeline & Model Training
+**Vineet** — Data Pipeline & Model Training
 - Dataset collection, cleaning, and processing
 - Indian Law Knowledge Base (17,228 chunks)
 - MiniLM embeddings + FAISS index
