@@ -1,7 +1,7 @@
 from huggingface_hub import HfApi, login
 import os
 
-HF_TOKEN = "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"
+HF_TOKEN = "hf_xxxxxxxxxxxxxxxxxxxx"
 login(token=HF_TOKEN)
 
 api = HfApi()
