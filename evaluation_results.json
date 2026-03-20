@@ -1,0 +1,65 @@
+{
+  "averages": {
+    "context_relevance": 0.21,
+    "groundedness": 0.83,
+    "answer_relevance": 0.83
+  },
+  "per_clause": [
+    {
+      "clause": "Company may terminate this agreement at any time without notice or reason.",
+      "violation_found": false,
+      "law_cited": "None",
+      "context_relevance": 0.44,
+      "groundedness": 0.78,
+      "answer_relevance": 0.78
+    },
+    {
+      "clause": "Freelancer shall not work for any company in any industry for 5 years after term",
+      "violation_found": true,
+      "law_cited": "Companies Act, 2013",
+      "context_relevance": 0.0,
+      "groundedness": 0.78,
+      "answer_relevance": 0.89
+    },
+    {
+      "clause": "Payment shall be made if work done is satisfactory as determined by management.",
+      "violation_found": true,
+      "law_cited": "Payment of Wages Act, 1936",
+      "context_relevance": 0.0,
+      "groundedness": 0.78,
+      "answer_relevance": 0.89
+    },
+    {
+      "clause": "The employee shall maintain confidentiality of all company information indefinit",
+      "violation_found": false,
+      "law_cited": "None",
+      "context_relevance": 0.11,
+      "groundedness": 0.89,
+      "answer_relevance": 0.78
+    },
+    {
+      "clause": "Tenant shall pay damages at two times the rent for any period of overstay.",
+      "violation_found": false,
+      "law_cited": "None",
+      "context_relevance": 0.11,
+      "groundedness": 0.89,
+      "answer_relevance": 0.78
+    },
+    {
+      "clause": "Either party may terminate with one month written notice.",
+      "violation_found": false,
+      "law_cited": "None",
+      "context_relevance": 0.0,
+      "groundedness": 0.89,
+      "answer_relevance": 0.78
+    },
+    {
+      "clause": "Employee agrees to work additional hours as required by the employer without ext",
+      "violation_found": true,
+      "law_cited": "Labour_Codes_2020",
+      "context_relevance": 0.78,
+      "groundedness": 0.78,
+      "answer_relevance": 0.89
+    }
+  ]
+}

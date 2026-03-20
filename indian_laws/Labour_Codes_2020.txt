@@ -1,0 +1,93 @@
+LAW: Labour Codes, 2020 - India
+SOURCE: Ministry of Labour and Employment, Government of India
+============================================================
+
+OVERVIEW
+The Government of India consolidated 44 central labour laws into 4 Labour Codes in 2020:
+1. Code on Wages, 2019
+2. Industrial Relations Code, 2020
+3. Code on Social Security, 2020
+4. Occupational Safety, Health and Working Conditions Code, 2020
+
+CODE ON WAGES, 2019
+
+Section 1 - Short title, extent and commencement
+This Code may be called the Code on Wages, 2019. It extends to the whole of India.
+
+Section 2 - Definitions
+In this Code, unless the context otherwise requires:
+(a) employer means a person who employs, whether directly or through any person, one or more employees in his establishment;
+(b) employee means any person employed on wages by an establishment to do any skilled, semi-skilled or unskilled, manual, operational, supervisory, managerial, administrative, technical or clerical work for hire or reward;
+(c) wages means all remuneration whether by way of salaries, allowances or otherwise, expressed in terms of money or capable of being so expressed which would, if the terms of employment, express or implied, were fulfilled, be payable to a person employed in respect of his employment or of work done in such employment.
+
+Section 6 - Floor wage
+The Central Government may, by notification, fix the floor wage, taking into account the living standards of workers, and it may be fixed at different rates for different geographical areas.
+
+Section 7 - Minimum rate of wages
+The appropriate Government shall fix the minimum rate of wages payable to the employees. The minimum wages shall be fixed at an interval not exceeding five years.
+
+Section 9 - Fixing hours of work for normal working day
+In regard to any scheduled employment, the appropriate Government may fix the number of hours of work which shall constitute a normal working day, inclusive of one or more specified intervals.
+
+Section 13 - Maintenance of registers and records
+Every employer shall maintain such registers and records giving such particulars of employees employed by him, the work performed by them, the wages paid to them, and such other particulars as may be prescribed.
+
+Section 17 - Payment of wages
+All wages shall be paid in current coin or currency notes or by cheque or by crediting the wages in the bank account of the employee.
+
+Section 26 - Deductions which may be made from wages
+Notwithstanding the provisions of any other law for the time being in force, deductions from the wages of an employed person shall be made only in accordance with the provisions of this Code.
+
+INDUSTRIAL RELATIONS CODE, 2020
+
+Section 2 - Definitions
+In this Code, unless context otherwise requires:
+(a) industry means any systematic activity carried on by co-operation between an employer and workers for the production, supply or distribution of goods or services;
+(b) industrial dispute means any dispute or difference between employers and employers, or between employers and workers, or between workers and workers, which is connected with the employment or non-employment or the terms of employment or with the conditions of labour of any person;
+(c) worker means any person except an apprentice employed in any industry to do any manual, unskilled, skilled, technical, operational, clerical or supervisory work for hire or reward.
+
+Section 3 - Works Committee
+In the case of any industrial establishment in which one hundred or more workers are employed, the employer shall constitute a Works Committee consisting of representatives of employers and workers.
+
+Section 4 - Grievance Redressal Committee
+Every industrial establishment employing twenty or more workers shall have one or more Grievance Redressal Committees for resolution of disputes arising out of individual grievances.
+
+Section 14 - Reference of disputes to Boards, Courts or Tribunals
+Where the appropriate Government is of the opinion that any industrial dispute exists or is apprehended, it may at any time refer the dispute to a Board, Court, Labour Court, Tribunal or National Industrial Tribunal for adjudication.
+
+Section 77 - Prohibition of strikes and lock-outs
+No person employed in an industrial establishment shall go on strike and no employer of any such industrial establishment shall declare a lock-out without giving notice of strike or lock-out within sixty days before striking or declaring a lock-out.
+
+CODE ON SOCIAL SECURITY, 2020
+
+Section 1 - Short title, extent and commencement
+This Code may be called the Code on Social Security, 2020.
+
+Section 2 - Definitions
+In this Code, unless the context otherwise requires:
+(a) building worker means a person who is employed to do any skilled, semi-skilled or unskilled manual, supervisory, technical or clerical work for hire or reward in connection with any building or other construction work;
+(b) gig worker means a person who performs work or participates in a work arrangement and earns from such activities outside of traditional employer-employee relationship;
+(c) platform worker means a person engaged in or undertaking platform work.
+
+Section 3 - Employees Provident Fund
+The Central Government may, by notification, frame a scheme to be called the Employees Provident Fund Scheme for the establishment of provident funds for employees.
+
+Section 6 - Employees State Insurance
+The Central Government shall establish a Corporation called the Employees State Insurance Corporation to administer the scheme of employees state insurance.
+
+Section 55 - Gratuity
+A gratuity shall be payable to an employee on the termination of his employment after he has rendered continuous service for not less than five years. The rate of gratuity shall be fifteen days wages based on the rate of wages last drawn by the employee.
+
+OCCUPATIONAL SAFETY, HEALTH AND WORKING CONDITIONS CODE, 2020
+
+Section 6 - Duties of employers
+Every employer shall ensure, so far as is reasonably practicable, the health, safety and working conditions of all workers employed by him including contract labour, inter-state migrant workers, and other categories of workers.
+
+Section 25 - Working hours
+No worker shall be required or allowed to work in any establishment for more than eight hours in any day. The period of work of a worker shall be so arranged that inclusive of his intervals for rest, it shall not spread over more than twelve hours in any day.
+
+Section 27 - Weekly rest
+Every worker shall be allowed a rest day with wages every week.
+
+Section 32 - Annual leave with wages
+Every worker who has worked for a period of one hundred and eighty days or more in an establishment during a calendar year shall be allowed leave with wages for a number of days calculated at the rate of one day for every twenty days of work performed.

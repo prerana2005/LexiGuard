@@ -1,0 +1,84 @@
+LAW: Arbitration and Conciliation Act, 1996
+SOURCE: Government of India
+============================================================
+
+PART I - ARBITRATION
+
+CHAPTER I - GENERAL PROVISIONS
+
+Section 1 - Short title, extent and commencement
+This Act may be called the Arbitration and Conciliation Act, 1996. It extends to the whole of India. It shall come into force on such date as the Central Government may, by notification in the Official Gazette, appoint.
+
+Section 2 - Definitions
+In this Part, unless the context otherwise requires:
+(a) arbitration means any arbitration whether or not administered by permanent arbitral institution;
+(b) arbitration agreement means an agreement referred to in section 7;
+(c) arbitral award includes an interim award;
+(d) arbitral tribunal means a sole arbitrator or a panel of arbitrators;
+(e) Court means the principal Civil Court of original jurisdiction in a district, and includes the High Court in exercise of its ordinary original civil jurisdiction;
+(f) international commercial arbitration means an arbitration relating to disputes arising out of legal relationships, whether contractual or not, considered as commercial under the law in force in India.
+
+Section 3 - Receipt of written communications
+Unless otherwise agreed by the parties, any written communication is deemed to have been received if it is delivered to the addressee personally or at his habitual residence, place of business or mailing address.
+
+Section 4 - Waiver of right to object
+A party who knows that any provision of this Part from which the parties may derogate or any requirement under the arbitration agreement has not been complied with and yet proceeds with the arbitration without stating his objection to such non-compliance without undue delay shall be deemed to have waived his right to so object.
+
+Section 5 - Extent of judicial intervention
+Notwithstanding anything contained in any other law for the time being in force, in matters governed by this Part, no judicial authority shall intervene except where so provided in this Part.
+
+Section 6 - Administrative assistance
+In order to facilitate the conduct of the arbitral proceedings, the parties, or the arbitral tribunal with the consent of the parties, may arrange for administrative assistance by a suitable institution or person.
+
+Section 7 - Arbitration agreement
+An arbitration agreement means an agreement by the parties to submit to arbitration all or certain disputes which have arisen or which may arise between them in respect of a defined legal relationship, whether contractual or not. An arbitration agreement may be in the form of an arbitration clause in a contract or in the form of a separate agreement. An arbitration agreement shall be in writing.
+
+Section 8 - Power to refer parties to arbitration where there is an arbitration agreement
+A judicial authority, before which an action is brought in a matter which is the subject of an arbitration agreement shall, if a party to the arbitration agreement or any person claiming through or under him so applies not later than the date of submitting his first statement on the substance of the dispute, then, notwithstanding any judgment, decree or order of the Supreme Court or any Court, refer the parties to arbitration unless it finds that prima facie no valid arbitration agreement exists.
+
+Section 9 - Interim measures by Court
+A party may, before or during arbitral proceedings or at any time after the making of the arbitral award but before it is enforced, apply to a Court for interim measures of protection.
+
+Section 10 - Number of arbitrators
+The parties are free to determine the number of arbitrators, provided that such number shall not be an even number. Failing the determination, the arbitral tribunal shall consist of a sole arbitrator.
+
+Section 11 - Appointment of arbitrators
+A person of any nationality may be an arbitrator, unless otherwise agreed by the parties. The parties are free to agree on a procedure for appointing the arbitrator or arbitrators.
+
+Section 16 - Competence of arbitral tribunal to rule on its jurisdiction
+The arbitral tribunal may rule on its own jurisdiction, including ruling on any objections with respect to the existence or validity of the arbitration agreement.
+
+Section 17 - Interim measures ordered by arbitral tribunal
+The arbitral tribunal may, unless otherwise agreed by the parties, order a party to take any interim measure of protection as the arbitral tribunal may consider necessary.
+
+Section 23 - Statements of claim and defence
+Within the period of time agreed upon by the parties or determined by the arbitral tribunal, the claimant shall state the facts supporting his claim, the points at issue and the relief or remedy sought, and the respondent shall state his defence in respect of these particulars.
+
+Section 28 - Rules applicable to substance of dispute
+Where the place of arbitration is situated in India, the arbitral tribunal shall decide the dispute submitted to arbitration in accordance with the substantive law for the time being in force in India.
+
+Section 29 - Decision making by panel of arbitrators
+Unless otherwise agreed by the parties, in arbitral proceedings with more than one arbitrator, any decision of the arbitral tribunal shall be made by a majority of all its members.
+
+Section 31 - Form and contents of arbitral award
+An arbitral award shall be made in writing and shall be signed by the members of the arbitral tribunal. The arbitral award shall state the reasons upon which it is based, unless the parties have agreed that no reasons are to be given.
+
+Section 34 - Application for setting aside arbitral award
+Recourse to a Court against an arbitral award may be made only by an application for setting aside such award. An arbitral award may be set aside by the Court only if the party making the application furnishes proof that a party was under some incapacity, or the arbitration agreement is not valid under the law.
+
+Section 36 - Enforcement
+Where the time for making an application to set aside the arbitral award under section 34 has expired, or such application having been made, it has been refused, the award shall be enforced under the Code of Civil Procedure, 1908 in the same manner as if it were a decree of the Court.
+
+PART III - CONCILIATION
+
+Section 62 - Commencement of conciliation proceedings
+The party initiating conciliation shall send to the other party a written invitation to conciliate under this Part, briefly identifying the subject of the dispute.
+
+Section 67 - Role of conciliator
+The conciliator shall assist the parties in an independent and impartial manner in their attempt to reach an amicable settlement of their dispute. The conciliator shall be guided by principles of objectivity, fairness and justice.
+
+Section 73 - Settlement agreement
+When it appears to the conciliator that there exist elements of a settlement which may be acceptable to the parties, he shall formulate the terms of a possible settlement and submit them to the parties for their observations.
+
+Section 74 - Status and effect of settlement agreement
+The settlement agreement shall have the same status and effect as if it is an arbitral award on agreed terms on the substance of the dispute rendered by an arbitral tribunal under section 30.

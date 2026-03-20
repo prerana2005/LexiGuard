@@ -1,0 +1,72 @@
+LAW: Consumer Protection Act, 2019
+SOURCE: Ministry of Consumer Affairs, Government of India
+============================================================
+
+CHAPTER I - PRELIMINARY
+
+Section 1 - Short title, extent and commencement
+This Act may be called the Consumer Protection Act, 2019. It extends to the whole of India.
+
+Section 2 - Definitions
+In this Act, unless the context otherwise requires:
+(a) advertisement means any audio or visual publicity, representation, endorsement or pronouncement made by means of light, sound, smoke, gas, print, electronic media, internet or website and includes any notice, circular, label, wrapper, invoice or such other documents;
+(b) complainant means a consumer or any voluntary consumer association or the Central Government or any State Government who or which makes a complaint;
+(c) complaint means any allegation in writing, made by a complainant for obtaining any relief provided by or under this Act;
+(d) consumer means any person who buys any goods for a consideration which has been paid or promised or partly paid and partly promised, or under any system of deferred payment and includes any user of such goods other than the person who buys such goods for consideration paid or promised or partly paid or partly promised;
+(e) consumer dispute means a dispute where the person against whom a complaint has been made, denies or disputes the allegations contained in the complaint;
+(f) defect means any fault, imperfection or shortcoming in the quality, quantity, potency, purity or standard which is required to be maintained by or under any law for the time being in force or under any contract, express or implied or as is claimed by the trader in any manner whatsoever in relation to any goods or product;
+(g) deficiency means any fault, imperfection, shortcoming or inadequacy in the quality, nature and manner of performance which is required to be maintained by or under any law for the time being in force or has been undertaken to be performed by a person in pursuance of a contract or otherwise in relation to any service;
+(h) e-commerce means buying or selling of goods or services including digital products over digital or electronic network;
+(i) misleading advertisement means an advertisement, which falsely describes a product or service, or gives a false guarantee to, or is likely to mislead the consumer as to the nature, substance, quantity or quality of such product or service.
+
+CHAPTER II - CONSUMER PROTECTION COUNCILS
+
+Section 3 - Central Consumer Protection Council
+The Central Government shall, by notification, establish with effect from such date as it may specify in such notification, a Council to be known as the Central Consumer Protection Council.
+
+Section 6 - State Consumer Protection Councils
+The State Government shall, by notification, establish with effect from such date as it may specify in such notification, a Council to be known as the State Consumer Protection Council.
+
+CHAPTER III - CENTRAL CONSUMER PROTECTION AUTHORITY
+
+Section 10 - Establishment of Central Consumer Protection Authority
+The Central Government shall, by notification, establish with effect from such date as it may specify in such notification, an executive agency to be known as the Central Consumer Protection Authority to regulate matters relating to violation of rights of consumers, unfair trade practices and misleading advertisements which are prejudicial to the interests of public and consumers.
+
+Section 18 - Powers and functions of Central Authority
+The Central Authority shall have the power to protect, promote and enforce the rights of consumers as a class and prevent violation of consumers rights under this Act.
+
+CHAPTER IV - CONSUMER DISPUTES REDRESSAL COMMISSION
+
+Section 28 - District Consumer Disputes Redressal Commission
+The State Government shall, by notification, establish a District Consumer Disputes Redressal Commission, to be known as the District Commission, in each district of the State.
+
+Section 34 - Jurisdiction of District Commission
+Subject to the provisions of this Act, the District Commission shall have jurisdiction to entertain complaints where the value of the goods or services paid as consideration does not exceed one crore rupees.
+
+Section 47 - Jurisdiction of State Commission
+Subject to the provisions of this Act, the State Commission shall have jurisdiction to entertain complaints where the value of the goods or services paid as consideration exceeds one crore rupees but does not exceed ten crore rupees.
+
+Section 58 - Jurisdiction of National Commission
+Subject to the provisions of this Act, the National Commission shall have jurisdiction to entertain complaints where the value of the goods or services paid as consideration exceeds ten crore rupees.
+
+CHAPTER V - PRODUCT LIABILITY
+
+Section 82 - Product liability
+A product liability action may be brought by a complainant against a product manufacturer, product service provider or product seller, as the case may be, for any harm caused to him on account of a defective product.
+
+Section 84 - Liability of product manufacturer
+A product manufacturer shall be liable in a product liability action if the product contains a manufacturing defect, or the product is defective in design, or there was a failure to warn the consumer of the possible risks of using the product.
+
+Section 86 - Exceptions to product liability
+A product manufacturer or seller shall not be liable for failure to warn if the product was acquired by the user knowing that the product was or could be defective.
+
+CHAPTER VI - OFFENCES AND PENALTIES
+
+Section 88 - Penalty for false or misleading advertisement
+Any manufacturer or service provider who causes a false or misleading advertisement to be made shall be punished with imprisonment for a term which may extend to two years and with fine which may extend to ten lakh rupees.
+
+Section 89 - Penalty for manufacturing of spurious goods
+Any person who manufactures or sells spurious goods shall be punished with imprisonment for a term which shall not be less than six months but which may extend to seven years and with fine.
+
+Section 90 - Penalty for misleading consumers
+Whoever misleads any consumer by means of a false or misleading advertisement shall be punished with imprisonment for a term which may extend to two years and with fine which may extend to ten lakh rupees.

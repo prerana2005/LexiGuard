@@ -46,3 +46,5 @@ Thumbs.db
 # Large zip files
 *.zip
 *.tar.gz
+
+.env.env
