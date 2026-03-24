@@ -15,7 +15,7 @@ groq_client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 # ── LLM Judge ──────────────────────────────────────────────────
 def llm_judge(prompt):
     response = groq_client.chat.completions.create(
-        model="llama-3.1-8b-instant",
+        model="llama-3.3-70b-versatile",
         messages=[{"role": "user", "content": prompt}],
         temperature=0,
         max_tokens=10
@@ -29,7 +29,7 @@ def llm_judge(prompt):
 
 # ── 3 Metrics ──────────────────────────────────────────────────
 def context_relevance(clause, retrieved_laws):
-    law_text = "\n".join([f"{l['law_name']} - {l['section_number']}: {l['text'][:200]}"
+    law_text = "\n".join([f"{l['law_name']} - {l['section_number']}: {l['text'][:400]}"
                           for l in retrieved_laws])
     prompt = f"""Rate how relevant the retrieved Indian law sections are to this contract clause.
 Score from 1-9. Single digit only.
@@ -86,7 +86,7 @@ for i, clause in enumerate(test_clauses):
 
     # Get compliance result
     result = compliance_agent(clause)
-    retrieved_laws = search_relevant_laws(clause, top_k=3)
+    retrieved_laws = search_relevant_laws(clause, top_k=7)
 
     verdict = f"Violation: {result['violation']}. {result['explanation']}"
 

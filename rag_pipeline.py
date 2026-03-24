@@ -9,24 +9,24 @@ model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
 # Load the FAISS index
 print("Loading FAISS index...")
-index = faiss.read_index('faiss_index/indian_laws.index')
+index = faiss.read_index('faiss_index/indian_laws_v3.index')
 
 # Load the metadata (law name, section, text)
 print("Loading metadata...")
-with open('faiss_index/indian_laws_metadata.json', 'r', encoding='utf-8') as f:
+with open('embeddings/indian_laws_metadata_v3.json', 'r', encoding='utf-8') as f:
     metadata = json.load(f)
 
 print(f"FAISS index loaded! Total law chunks: {index.ntotal}")
 
 def search_relevant_laws(clause_text, top_k=3):
-    # Convert clause to vector
-    clause_vector = model.encode([clause_text])
+    # Expand query with legal context
+    expanded_query = f"Indian law regulation: {clause_text}"
+    
+    clause_vector = model.encode([expanded_query])
     clause_vector = np.array(clause_vector).astype('float32')
 
-    # Search more results so we can filter bad ones
-    distances, indices = index.search(clause_vector, top_k * 5)
+    distances, indices = index.search(clause_vector, top_k * 10)
 
-    # Get results but FILTER OUT generic QA entries
     results = []
     bad_law_names = ['Indian_Law_QA', 'Indian_Law', 'Indian_Legal']
     
@@ -35,7 +35,6 @@ def search_relevant_laws(clause_text, top_k=3):
             chunk = metadata[idx]
             law_name = chunk.get('law_name', 'Unknown')
             
-            # Skip bad entries
             if law_name in bad_law_names:
                 continue
                 
@@ -46,7 +45,6 @@ def search_relevant_laws(clause_text, top_k=3):
                 'relevance_score': float(distances[0][i])
             })
             
-            # Stop once we have enough good results
             if len(results) == top_k:
                 break
 
