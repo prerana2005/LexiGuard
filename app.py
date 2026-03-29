@@ -118,13 +118,16 @@ if st.session_state.analysis_done:
         is_ambiguous = res.get('ambiguity', {}).get('is_ambiguous', False)
         has_violation = res.get('compliance', {}).get('violation', False)
 
-        if risk_level == "High": total_score += 10
-        elif risk_level == "Medium": total_score += 5
-        else: total_score += 2
-        if is_ambiguous: total_score += 7
-        if has_violation: total_score += 9
+        clause_score = 0
+        if risk_level == "High": clause_score += 10
+        elif risk_level == "Medium": clause_score += 5
+        else: clause_score += 2
+        if is_ambiguous: clause_score += 3
+        if has_violation: clause_score += 5
 
-    max_score = len(clauses) * (10 + 7 + 9)
+        total_score += clause_score
+
+    max_score = len(clauses) * 18
     overall = min(int((total_score / max(max_score, 1)) * 100), 100)
 
     if overall <= 30: band = "🟢 Mostly Safe"

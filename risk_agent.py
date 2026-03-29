@@ -124,9 +124,10 @@ Do NOT flag as High or Medium Risk:
 - Introduction or preamble clauses
 - Entire agreement or integration clauses
 - Governing law and jurisdiction clauses
-- Standard IP assignment where full payment triggers transfer
 - Standard arbitration under Arbitration Act 1996
-- Mutual termination with 30 days or more notice
+- Standard IP assignment where full payment triggers transfer to client
+- Freelance payment terms with reasonable interest on late payment
+- Mutual termination with 30 days or more notice for both parties
 
 Return ONLY JSON. No text outside JSON.
 
