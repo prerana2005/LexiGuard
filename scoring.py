@@ -44,13 +44,13 @@ def calculate_risk_score(risk_result, ambiguity_result, compliance_result, expla
     score = min(score, 100)
 
     # --- Determine color/label ---
-    if score <= 25:
+    if score <= 10:
         label = "GREEN"
         verdict = "Safe to sign"
-    elif score <= 50:
+    elif score <= 18:
         label = "YELLOW"
         verdict = "Review carefully before signing"
-    elif score <= 75:
+    elif score <= 24:
         label = "ORANGE"
         verdict = "Risky — consult a lawyer"
     else:
