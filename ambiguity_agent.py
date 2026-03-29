@@ -20,8 +20,8 @@ def load_resources():
     global _embedder, _faiss_index, _metadata, _bm25
     if _embedder is None:
         _embedder = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
-        _faiss_index = faiss.read_index("faiss_index/indian_laws.index")
-        with open("faiss_index/indian_laws_metadata.json", "r", encoding="utf-8") as f:
+        _faiss_index = faiss.read_index("faiss_index/indian_laws_v3.index")
+        with open("embeddings/indian_laws_metadata_v3.json", "r", encoding="utf-8") as f:
             _metadata = json.load(f)
         corpus = [chunk.get("text", "") for chunk in _metadata]
         tokenized_corpus = [doc.lower().split() for doc in corpus]
@@ -91,13 +91,13 @@ def retrieve_laws(query, top_k=2):
         results = hybrid_search(broader_query, top_k)
     return results
 
-
 VAGUE_WORDS = [
     "satisfactory", "reasonable", "adequate",
     "at discretion", "as needed", "as soon as possible",
     "reasonable time", "good condition", "tenable condition",
     "minor repairs", "normal wear and tear", "well performed",
-    "if work done is well", "subject to approval"
+    "if work done is well", "subject to approval",
+    "mutual discussion", "when required", "as directed"
 ]
 
 AMBIGUITY_PROMPT = """You are a legal analyst specializing in Indian contract law.
@@ -107,23 +107,34 @@ Relevant Indian Laws that require clear contract terms:
 
 Analyze this clause for vague undefined terms that could realistically be EXPLOITED by one party against the other.
 
-Only flag as ambiguous if there is a genuine exploitable vague term — not standard legal language.
-Do NOT flag: party names, standard definitions, boilerplate introductions.
-DO flag: subjective performance standards, undefined timeframes, discretionary decisions.
+Strict rules:
+- Only flag as ambiguous if a term is GENUINELY exploitable in a real dispute
+- Do NOT flag standard legal language as vague
+- Do NOT flag: party names, dates, standard definitions, boilerplate clauses
+- Do NOT flag: "written notice", "pro-rata basis", "bank transfer", "jointly appoint"
+- DO flag: subjective performance standards ("satisfactory", "well"), undefined timeframes, sole discretion clauses, undefined metrics for payment triggers
 
 Return ONLY this JSON:
 {{
     "is_ambiguous": true or false,
     "vague_phrases": ["only", "genuinely", "exploitable", "terms"],
-    "how_exploited": "specific realistic way this could be misused",
+    "how_exploited": "specific realistic way this could be misused in an Indian court",
     "suggested_fix": "exact replacement with specific measurable terms",
     "indian_law_requirement": "what Indian law says about clarity in contracts"
+}}
+
+If no genuinely exploitable vague terms exist return:
+{{
+    "is_ambiguous": false,
+    "vague_phrases": [],
+    "how_exploited": "None",
+    "suggested_fix": "None",
+    "indian_law_requirement": "None"
 }}
 
 Return ONLY JSON. No text outside JSON.
 
 Clause: {clause_text}"""
-
 def analyze_ambiguity(clause_text):
     found_vague = [w for w in VAGUE_WORDS if w.lower() in clause_text.lower()]
 

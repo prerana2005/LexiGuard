@@ -20,8 +20,8 @@ def load_resources():
     global _embedder, _faiss_index, _metadata, _bm25
     if _embedder is None:
         _embedder = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
-        _faiss_index = faiss.read_index("faiss_index/indian_laws.index")
-        with open("faiss_index/indian_laws_metadata.json", "r", encoding="utf-8") as f:
+        _faiss_index = faiss.read_index("faiss_index/indian_laws_v3.index")
+        with open("embeddings/indian_laws_metadata_v3.json", "r", encoding="utf-8") as f:
             _metadata = json.load(f)
         # Build BM25 index once
         corpus = [chunk.get("text", "") for chunk in _metadata]

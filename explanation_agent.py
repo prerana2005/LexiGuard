@@ -53,10 +53,10 @@ def load_models():
     id2label = {int(k): v for k, v in label_map["id2label"].items()}
 
     print("Loading FAISS index...")
-    faiss_index = faiss.read_index("faiss_index/indian_laws.index")
+    faiss_index = faiss.read_index("faiss_index/indian_laws_v3.index")
 
     print("Loading metadata...")
-    with open("faiss_index/indian_laws_metadata.json", "r", encoding="utf-8") as f:
+    with open("embeddings/indian_laws_metadata_v3.json", "r", encoding="utf-8") as f:
         metadata = json.load(f)
 
     print("Loading MiniLM embedder...")

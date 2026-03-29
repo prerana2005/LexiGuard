@@ -14,10 +14,10 @@ def calculate_risk_score(risk_result, ambiguity_result, compliance_result, expla
     if compliance_result.get('violation') == True:
         severity = compliance_result.get('severity', 'LOW').upper()
         if severity == 'HIGH':
-            score += 9
+            score += 8
             flags.append("Non-compliant with Indian law (HIGH)")
         elif severity == 'MEDIUM':
-            score += 6
+            score += 5
             flags.append("Non-compliant with Indian law (MEDIUM)")
         else:
             score += 3
@@ -36,7 +36,7 @@ def calculate_risk_score(risk_result, ambiguity_result, compliance_result, expla
         flags.append("Low risk clause")
 
     # --- Ambiguity Agent scoring ---
-    if ambiguity_result.get('has_ambiguity') == True:
+    if ambiguity_result.get('is_ambiguous') == True:
         score += 7
         flags.append("Contains vague/ambiguous language")
 

@@ -20,8 +20,8 @@ def load_resources():
     global _embedder, _faiss_index, _metadata, _bm25
     if _embedder is None:
         _embedder = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
-        _faiss_index = faiss.read_index("faiss_index/indian_laws.index")
-        with open("faiss_index/indian_laws_metadata.json", "r", encoding="utf-8") as f:
+        _faiss_index = faiss.read_index("faiss_index/indian_laws_v3.index")
+        with open("embeddings/indian_laws_metadata_v3.json", "r", encoding="utf-8") as f:
             _metadata = json.load(f)
         corpus = [chunk.get("text", "") for chunk in _metadata]
         tokenized_corpus = [doc.lower().split() for doc in corpus]
@@ -91,7 +91,6 @@ def retrieve_laws(query, top_k=2):
         results = hybrid_search(broader_query, top_k)
     return results
 
-
 RISK_PROMPT = """You are a senior Indian contract lawyer.
 
 Relevant Indian Laws:
@@ -106,11 +105,32 @@ Analyze this contract clause based on the Indian laws above and return ONLY this
     "applicable_law": "which Indian law applies here if any"
 }}
 
+Rules:
+- High Risk: Only for genuinely one-sided or dangerous clauses
+- Medium Risk: Clauses with some concern but not immediately dangerous
+- Low Risk: Standard fair clauses
+
+Always High Risk:
+- Termination without notice or with less than 14 days notice
+- Salary or payment reduction at employer's sole discretion
+- Non-compete clauses post-employment (void under Section 27 Indian Contract Act)
+- IP assignment including work done outside working hours
+- Payment conditional on subjective evaluation with no defined criteria
+- Perpetual confidentiality obligations (forever)
+- Liquidated damages disproportionate to actual loss
+- Asymmetric notice periods heavily favouring one party
+
+Do NOT flag as High or Medium Risk:
+- Introduction or preamble clauses
+- Entire agreement or integration clauses
+- Governing law and jurisdiction clauses
+- Standard IP assignment where full payment triggers transfer
+- Standard arbitration under Arbitration Act 1996
+- Mutual termination with 30 days or more notice
+
 Return ONLY JSON. No text outside JSON.
 
 Clause: {clause_text}"""
-
-
 def analyze_risk(clause_text):
     relevant_laws = retrieve_laws(clause_text)
     law_context = ""
