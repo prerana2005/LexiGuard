@@ -1,194 +1,143 @@
-# LexiGuard — AI-Powered Legal Assistant
+# LexiGuard — AI-Powered Indian Contract Analysis System
 
-An intelligent legal AI system for understanding, analyzing, and explaining legal clauses with Indian law context. LexiGuard combines Legal-BERT clause classification, FAISS semantic search over Indian law, and LLaMA-based explanation generation.
+LexiGuard is an end-to-end AI system for analyzing legal contracts under Indian law. It combines Legal-BERT classification, Hybrid Retrieval-Augmented Generation (RAG), and a multi-agent architecture to detect risks, ambiguities, and legal violations at the clause level.
 
 ---
 
-## 🏆 Results
+## 🏆 Key Results
 
 | Component | Details |
-|-----------|---------|
-| Classifier | Legal-BERT fine-tuned, 122 clause types |
+|----------|--------|
+| Clause Classifier | Legal-BERT (122 classes) |
 | Test Accuracy | **94.65%** |
-| Test F1 Macro | **0.9417** |
-| Knowledge Base | 17,228 Indian law chunks |
-| Embedding Model | all-MiniLM-L6-v2 (384-dim) |
-| Explanation Model | LLaMA 3.2 3B Instruct |
+| F1 Macro | **0.9417** |
+| Knowledge Base | **4,836 verified statutory chunks** |
+| Context Relevance | **0.67 (↑ from 0.21)** |
+| Groundedness | **0.86** |
+| Answer Relevance | **0.89** |
+| Best Compliance Model | LLaMA 3.1 8B (F1 = **1.000**) |
 
 ---
 
-## 📦 Models & Datasets
+## 🧠 System Overview
 
-| Resource | Location |
-|----------|----------|
-| Classifier model | [Caraxes22/Lexiguard-LegalBert](https://huggingface.co/Caraxes22/Lexiguard-LegalBert) |
-| Datasets + embeddings + FAISS index | [Caraxes22/LexiGuard-datasets](https://huggingface.co/datasets/Caraxes22/LexiGuard-datasets) |
+LexiGuard processes contracts through five stages:
 
-### Download all data (run once):
-```bash
-pip install huggingface_hub
+1. Document Ingestion  
+   PDF parsing via `pdfplumber` and OCR via Groq Vision API  
 
-python -c "
-from huggingface_hub import snapshot_download
-snapshot_download(
-    repo_id='Caraxes22/LexiGuard-datasets',
-    repo_type='dataset',
-    local_dir='.'
-)
-print('All files downloaded!')
-"
-```
+2. Clause Segmentation  
+   Regex-based clause splitting with fallback strategies  
+
+3. Clause Classification  
+   Legal-BERT predicts clause type across 122 categories  
+
+4. Hybrid RAG Retrieval  
+   BM25 (keyword search) + FAISS (semantic search) + RRF + CRAG  
+
+5. Multi-Agent Analysis  
+   Risk, Ambiguity, Compliance, and Explanation agents  
 
 ---
 
-## 🏗️ Project Structure
-```
-LexiGuard/
-├── data/
-│   ├── raw/                        # Raw downloaded datasets
-│   ├── processed/                  # Cleaned and processed data
-│   │   ├── combined_dataset_clean.json   # Final training data (16,648 records, 122 labels)
-│   │   ├── ledgar_processed_named.json   # LEDGAR with named labels
-│   │   └── indian_laws_chunks_final.json # 17,228 Indian law chunks
-│   └── indian_laws/                # Indian law text files (7 Acts)
-├── embeddings/                     # MiniLM vector embeddings (25.2 MB)
-├── faiss_index/                    # FAISS search index (25.4 MB)
-├── scripts/                        # All pipeline scripts
-└── notebooks/                      # Kaggle training notebooks
-```
+## 🤖 Agent Architecture
+
+| Agent | Function | Model |
+|------|---------|------|
+| Risk Agent | Detects high/medium/low risk clauses | LLaMA 3.1 8B |
+| Ambiguity Agent | Identifies vague or exploitable terms | LLaMA 3.1 8B |
+| Compliance Agent | Detects legal violations with statute references | LLaMA 3.1 8B |
+| Explanation Agent | Generates plain-English explanations | LLaMA 3.3 70B |
 
 ---
 
-## ⚙️ Pipeline
+## 🔍 Hybrid RAG Pipeline
 
-### Step 1 — Data Collection
-```
-download_cuad.py          → Download raw CUAD dataset (SEC contracts)
-download_ledgar.py        → Download LEDGAR from HuggingFace
-download_indian_laws.py   → Scrape Indian law text from Wikipedia
-write_indian_laws.py      → Write manual sections for 4 key Acts
-```
+- Knowledge base: 4,836 high-quality Indian law chunks  
+- Removed ~12,000 noisy entries to improve retrieval  
+- Retrieval methods:
+  - BM25 (keyword matching)
+  - FAISS (semantic similarity)
+  - RRF fusion for ranking
+  - CRAG fallback for low-confidence queries  
 
-### Step 2 — Data Processing
-```
-fix_ledgar.py             → Convert numeric LEDGAR labels → named labels
-fix_cuad_and_rebuild.py   → Re-extract actual CUAD answer text (fix context bug)
-analyze_confusions.py     → Merge overlapping labels (138 → 132)
-drop_noisy_labels.py      → Drop noisy/generic labels (132 → 122)
-```
-
-### Step 3 — Knowledge Base
-```
-build_final_combined_kb.py → Build 17,228 chunk knowledge base
-                             + Generate MiniLM embeddings
-                             + Build FAISS index
-```
-
-### Step 4 — Training (Kaggle T4)
-```
-Legal-BERT fine-tuned on combined_dataset_clean.json
-122 clause types, 10 epochs, batch size 16, lr=3e-5
-Result: 94.65% test accuracy, 0.9417 F1 Macro
-```
-
-### Step 5 — Explanation Agent
-```
-explanation_agent.py → Full RAG pipeline:
-  clause text → Legal-BERT classify → FAISS retrieve → LLaMA explain
-```
+Hybrid + CRAG improves robustness and achieves higher law recall (~0.60).
 
 ---
 
-## 📊 Training Data
+## 📊 Evaluation
 
-| Source | Records | Labels | Notes |
-|--------|---------|--------|-------|
-| CUAD | 5,328 | 41 | SEC contract clauses (answer text extracted) |
-| LEDGAR | 80,000 | 100 | Legal provisions with named labels |
-| **Combined (balanced)** | **16,648** | **122** | Capped 50–150 per label |
+| Metric | Before | After | Improvement |
+|--------|--------|-------|------------|
+| Context Relevance | 0.21 | 0.67 | ↑ 3.2× |
+| Groundedness | 0.80 | 0.86 | ↑ +0.06 |
+| Answer Relevance | 0.83 | 0.89 | ↑ +0.06 |
 
-### Indian Law Knowledge Base
-
-| Source | Chunks | Type |
-|--------|--------|------|
-| mratanusarkar/Indian-Laws | 6,029 | Actual bare Act text |
-| viber1/indian-law-dataset | 5,701 | Law-specific QA pairs |
-| ShreyasP123/Legal-Dataset | 1,333 | Legal document chunks |
-| nisaar/Lawyer_GPT_India | 149 | Lawyer QA pairs |
-| Manual (7 Acts) | 134 | Hand-written sections |
-| **Total** | **17,228** | |
+**Insight:** Improvements are driven by better data quality and retrieval strategy rather than model size.
 
 ---
 
-## 🔍 Explanation Agent
+## 🧪 Ablation Studies
 
-The explanation agent combines all three components into a single pipeline:
-```python
-from explanation_agent import load_models, lexiguard_explain
-import os
+### LLM Backbone (Agents)
 
-# Load all models
-clf_tokenizer, clf_model, id2label, faiss_index, metadata, \
-    embedder, llm_pipe, llm_tokenizer = load_models(os.environ["HF_TOKEN"])
+| Model | Risk Accuracy | Violation F1 | Latency |
+|------|--------------|-------------|--------|
+| LLaMA 3.1 8B | 85.7% | **1.000** | 1.08s |
+| LLaMA 3.3 70B | **100%** | 0.857 | 1.35s |
 
-# Explain a clause
-result = lexiguard_explain(
-    "Either party may terminate this Agreement upon 30 days written notice.",
-    clf_tokenizer, clf_model, id2label,
-    faiss_index, metadata, embedder,
-    llm_pipe, llm_tokenizer
-)
-
-# Output:
-# 🏷️  Clause Type:  Termination For Convenience (97.6% confidence)
-# 📚 Relevant Laws: Indian Contract Act, 1872 — Section 73 ...
-# 📝 Explanation:   This clause allows either party to end the agreement...
-```
+**Conclusion:** Smaller models perform better for structured compliance detection due to better prompt adherence.
 
 ---
 
-## 🛠️ Setup
+### Retrieval Strategy
+
+| Strategy | Law Recall | Notes |
+|----------|-----------|------|
+| BM25 Only | 0.20 | Keyword mismatch issues |
+| FAISS Only | 0.60 | Good semantic retrieval |
+| Hybrid RRF | 0.20 | Noise reduces performance |
+| Hybrid + CRAG | **0.60** | Best robustness |
+
+**Insight:** Hybrid + CRAG handles ambiguous legal queries more effectively.
+
+---
+
+## 📦 Dataset
+
+- Combined CUAD + LEDGAR datasets  
+- Final dataset: **16,648 records, 122 clause types**  
+- Class-balanced (50–150 samples per class)  
+
+### Key Fixes
+- CUAD bug: incorrect full-text extraction → fixed  
+- LEDGAR labels: numeric → mapped to names  
+- Removed noisy and irrelevant labels  
+
+---
+
+## 🛠️ Tech Stack
+
+- PDF Parsing: pdfplumber  
+- OCR: Groq Vision API  
+- Embeddings: all-MiniLM-L6-v2  
+- Vector Search: FAISS  
+- Keyword Search: BM25  
+- Backend: FastAPI  
+- Frontend: Streamlit  
+- Models: Legal-BERT + LLaMA  
+
+---
+
+## ⚙️ Setup
+
 ```bash
 # Create virtual environment
 python -m venv lexiguard
-lexiguard\Scripts\activate
+source lexiguard/bin/activate  # or lexiguard\Scripts\activate (Windows)
 
 # Install dependencies
 pip install torch transformers datasets sentence-transformers
 pip install faiss-cpu peft trl accelerate bitsandbytes
 pip install scikit-learn pandas huggingface-hub
 ```
-
----
-
-## 📜 Scripts Reference
-
-| Script | Purpose |
-|--------|---------|
-| `download_cuad.py` | Download raw CUAD dataset |
-| `download_ledgar.py` | Download LEDGAR from HuggingFace |
-| `download_indian_laws.py` | Scrape Indian law texts from Wikipedia |
-| `write_indian_laws.py` | Write manual Indian Act sections |
-| `fix_ledgar.py` | Convert LEDGAR numeric → named labels |
-| `fix_cuad_and_rebuild.py` | Re-extract CUAD answer text + rebuild dataset |
-| `preprocess_cuad.py` | CUAD preprocessing utilities |
-| `analyze_confusions.py` | Analyze and merge overlapping labels |
-| `drop_noisy_labels.py` | Drop noisy/generic labels |
-| `build_final_combined_kb.py` | Build knowledge base + embeddings + FAISS |
-| `build_faiss_index.py` | Build FAISS index from existing embeddings |
-| `explanation_agent.py` | Full RAG pipeline — classify + retrieve + explain |
-| `upload_to_huggingface.py` | Upload datasets and models to HuggingFace |
-| `verify_progress.py` | Verify all files are consistent |
-| `Dataset_verify.py` | Verify dataset stats and label balance |
-
----
-
-## 👥 Team
-LexiGuard — Legal AI Project
-
-**Vineet** — Data Pipeline & Model Training
-- Dataset collection, cleaning, and processing
-- Indian Law Knowledge Base (17,228 chunks)
-- MiniLM embeddings + FAISS index
-- Legal-BERT classifier (94.65% accuracy)
-- Explanation Agent (RAG pipeline)
