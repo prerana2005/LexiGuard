@@ -1,7 +1,7 @@
 {
   "averages": {
     "context_relevance": 0.67,
-    "groundedness": 0.86,
+    "groundedness": 0.89,
     "answer_relevance": 0.89
   },
   "per_clause": [
@@ -10,7 +10,7 @@
       "violation_found": true,
       "law_cited": "Indian Contract Act, 1872",
       "context_relevance": 0.67,
-      "groundedness": 0.67,
+      "groundedness": 0.89,
       "answer_relevance": 0.89
     },
     {
